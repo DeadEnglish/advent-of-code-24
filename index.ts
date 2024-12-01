@@ -28,7 +28,6 @@ const getSolutions = async (): Promise<Solution[]> => {
         const stats = await stat(indexFilePath).catch(() => null);
 
         if (!stats || !stats.isFile()) {
-          console.log({ stats, isFile: stats?.isFile() });
           return handleErrorReturns("no index.ts file found", day);
         }
 
